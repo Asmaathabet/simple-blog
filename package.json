@@ -1,20 +1,25 @@
 {
-  "name": "simple-blog",
-  "version": "1.0.0",
-  "description": "simple blog by Node js",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Asmaathabet/simple-blog.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Asmaathabet/simple-blog/issues"
-  },
-  "homepage": "https://github.com/Asmaathabet/simple-blog#readme"
+    "name": "simple-blog",
+    "version": "1.0.0",
+    "description": "simple blog by Node js",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/server.js",
+        "watch": "nodemon src/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Asmaathabet/simple-blog.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Asmaathabet/simple-blog/issues"
+    },
+    "homepage": "https://github.com/Asmaathabet/simple-blog#readme",
+    "devDependencies": {
+        "nodemon": "^1.19.1"
+    }
 }
