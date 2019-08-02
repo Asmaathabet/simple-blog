@@ -17,8 +17,28 @@ const router = (request, response) => {
             }
 
         })
-    } else if (endpoint === '/public') {
+    } else if (endpoint.includes('/public')) {
 
+        const path1 = endpoint.split('/');
+        const filePath = path.join(__dirname, '..', ...path1);
+        const extention = endpoint.split('.').pop();
+        const extType = {
+            html: 'text/html',
+            css: 'text/css',
+            js: 'application/javascript',
+            jpg: 'image/jpg',
+            png: 'image/png',
+            ico: 'image/x-icon',
+        };
+        fs.readFile(filePath, (error, file) => {
+            if (error) {
+                response.writeHead(404, { 'Content-Type': 'text/html' });
+                response.end('<h1>Not Found</h1>');
+            } else {
+                response.writeHead(200, { 'Content-Type': extType[extention] });
+                response.end(file);
+            }
+        });
     } else if (endpoint === '/create-post') {
 
     } else {
